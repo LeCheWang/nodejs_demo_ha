@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
 const connectDB = require("./configs/database")
@@ -9,6 +10,8 @@ app.use(express.urlencoded({extended: true}))
 
 connectDB();
 routers(app); 
-app.listen(5000, ()=>{
-    console.log("server run at port 5000");
+
+const port = process.env.PORT;
+app.listen(port, ()=>{
+    console.log(`server run at port ${port}`);
 })

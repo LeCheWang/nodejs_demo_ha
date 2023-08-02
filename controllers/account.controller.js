@@ -4,7 +4,7 @@ module.exports = {
     /**
      *  get all account
      */
-    getAccounts: async (req, res, next)=>{
+    getAccounts: async (req, res, next)=>{ 
         const accounts = await accountModel.find()
         return res.status(200).json(accounts)
     },
